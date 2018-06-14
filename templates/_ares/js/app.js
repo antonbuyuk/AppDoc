@@ -11,6 +11,8 @@ $(window).on("load",function(){
 	favorites();
 	docApp();
 	closeModal();
+	showRev();
+	showProfiles();
 });
 
 function nonePadding() {
@@ -19,6 +21,13 @@ function nonePadding() {
 	if ($(greyBlock).length) {
 		$('.wrapper').css('padding-bottom', '0');
 	}
+}
+
+function showProfiles() {
+	$('.profile_more').click(function() {
+		$(this).parents('.profile_list').removeClass('profile_list-hide');
+		$(this).hide();
+	});
 }
 
 function rotateBorder() {
@@ -34,6 +43,14 @@ function rotateBorder() {
 			$(this).children('.border').css('transform', 'rotate('+ moveBorder + 'deg)');
 		});
 
+	});
+}
+
+/*Show revirews*/
+function showRev() {
+	$('.reviews_show').click(function() {
+		$(this).parent('.reviews_list-hide').removeClass('reviews_list-hide');
+		$(this).hide();
 	});
 }
 
@@ -145,6 +162,23 @@ $(document).ready(function() {
 			dots: false,
 			items:1,
 			navText: ['<i class="icon-ios-arrow-left"></i>','<i class="icon-ios-arrow-right"></i>'],
+		})
+	}
+
+	if ($('.carousel_doc').length) {
+		$('.carousel_doc').owlCarousel({
+			margin:0,
+			nav:true,
+			dots: false,
+			navText: ['<i class="icon-ios-arrow-left"></i>','<i class="icon-ios-arrow-right"></i>'],
+			responsive:{
+		        0:{
+		            items:1
+		        },
+		        1024:{
+		            items:2
+		        }
+		    }
 		})
 	}
 
