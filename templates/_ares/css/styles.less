@@ -363,6 +363,13 @@ hr{
 
 	&-size{
 
+		&-small{
+			font-size: 0.875rem;
+			color: #000;
+			display: block;
+			padding: 1.4375rem 0;
+		}
+
 		&-medium{
 			text-transform: uppercase;
 			font-size: 0.875rem;
@@ -385,6 +392,14 @@ hr{
 
 		&-full{
 			width: 100%;
+		}
+	}
+
+	&-radius{
+		border-radius: 2rem;
+
+		&:before{
+			border-radius: 2rem;
 		}
 	}
 }
@@ -809,6 +824,11 @@ hr{
 		}
 	}
 
+	.log_out{
+		display: block;
+    	font-size: 1.25rem;
+	}
+
 	&-in{
 		display: flex;
 		color: @bl;
@@ -825,6 +845,15 @@ hr{
 
 	@media (max-width: 99.975em){
 		margin-right: 0.5rem;
+	}
+
+	.log_out{
+		display: block;
+		font-size: 1.25rem;
+		
+		@media (min-width: 99.975em){
+			display: none
+		}
 	}
 }
 
@@ -2222,6 +2251,17 @@ ul{
 			margin-bottom: 0;
 		}
 
+		&.form-checkbox{
+			justify-content: flex-start;
+			margin-left: 0;
+				
+			label{
+				width: auto;
+				margin-top: 0 !important;
+				margin-bottom: 0 !important;
+			}
+		}
+
 		label{
 			position: relative;
 			width: 100%;
@@ -3466,6 +3506,10 @@ ul{
 		background-color: #fff;
 		padding: 4rem 6.25rem;
 
+		@media (max-width: 39.975em){
+			padding: 2rem 2rem;
+		}
+
 		.form-item{
 
 			input{
@@ -3497,6 +3541,14 @@ ul{
 		font-size: 2.75rem;
 		font-weight: 700;
 		color: #333;
+
+		&-medium{
+			font-weight: 500;
+		}
+
+		@media (max-width: 39.975em){
+			font-size: 2rem;
+		}
 	}
 
 	&_text{
@@ -3601,6 +3653,10 @@ ul{
 
 .mt{
 
+	&-40{
+		margin-right: 2.5rem;
+	}
+
 	&-52{
 		margin-top: 3.25rem;
 	}
@@ -3641,5 +3697,19 @@ ul{
 		@media (max-width: 39.975em){
 			max-width: none;
 		}
+	}
+}
+
+.lost-password{
+	position: absolute;
+	right: 0;
+	top: 1.125rem;
+	font-size: 0.875rem;
+	border-bottom: 1px solid transparent;
+	border-radius: 0;
+	transition: @ease;
+
+	&:hover{
+		border-bottom-color: @blue;
 	}
 }
